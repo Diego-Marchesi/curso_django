@@ -4,8 +4,7 @@ from django.shortcuts import render
 
 # HHTP REQUEST
 def Home(request):
-    return HttpResponse("HOME 3")
-    # RETORNA HTTP RESPONSE
+    return render(request, 'recipes/home.html')
 
 
 def Sobre(request):
