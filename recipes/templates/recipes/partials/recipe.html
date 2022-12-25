@@ -1,6 +1,6 @@
 <div class="recipe-list-item recipe">
     <div class="recipe-cover">
-        <img src="https://via.placeholder.com/1280x720.png/26gfe6" alt="temporário">
+        <img src="{{recipe.cover.url}}" alt="temporário">
     </div>
     <div class="recipe-title-container">
         <h2 class="recipe-title">{{recipe.title}}</h2>
@@ -37,10 +37,18 @@
             </div>
         </div>
     </div>
+    {% if is_detail_page is not True %}
     <footer class="recipe-footer">
         <a href="recipes/123" class="recipe-read-more button button-dark button-ful-width">
             <i class="fas fa-eye"></i>
             <span>Ver mais ...</span>
         </a>
     </footer>
+    {% endif %} 
+
+    {% if is_detail_page is True %}
+    <div class="preparation-steps">
+        {{recipe.preparation_steps|linebreaksbr}}
+    </div>
+    {% endif %}
 </div>
